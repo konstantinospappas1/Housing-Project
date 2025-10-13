@@ -43,9 +43,12 @@ print(f"Features: {X_train.shape[1]}")
 
 # XGBoost μοντέλο
 model = XGBRegressor(
-    n_estimators=100,
-    max_depth=5,
+    n_estimators=135,
+    max_depth=3,
     learning_rate=0.1,
+    subsample=0.8,
+    colsample_bytree=0.8,
+    min_child_weight=3,
     random_state=42
 )
 
