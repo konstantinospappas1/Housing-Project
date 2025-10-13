@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_absolute_error, r2_score
 
-# Φόρτωση 
+# Φόρτωση δεδομενωνν 
 df =pd.read_csv('Housing.csv', encoding='utf-8')
 
 print(f"Δεδομένα: {len(df)} γραμμές")
