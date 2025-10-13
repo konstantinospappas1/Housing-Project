@@ -79,4 +79,4 @@ df_compare = pd.DataFrame({
     'Predicted': y_pred_test
 })
 
-print(df_compare.head(10))  # δείχνει μόνο τις πρώτες 10 γραμμές
+print(df_compare.head(10))  
