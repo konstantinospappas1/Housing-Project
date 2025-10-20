@@ -68,7 +68,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score
 import matplotlib.pyplot as plt
 
-# === Φόρτωση δεδομένων ===
+# Φόρτωση δεδομένων 
 df = pd.read_csv('Housing.csv', encoding='utf-8')
 
 print(f"Δεδομένα: {len(df)} γραμμές")
@@ -78,20 +78,20 @@ df = df.dropna()
 
 print(df.nunique())
 
-# === Διαχωρισμός X και y ===
+#  Διαχωρισμός X και y 
 X = df.drop('price', axis=1)
 y = df['price']
 
-# === Train-test split ===
+#  Train-test split 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-# === Εντοπισμός κατηγορικών στηλών ===
+#  Εντοπισμός κατηγορικών στηλών 
 categorical_cols = X.select_dtypes(include=['object', 'category']).columns.tolist()
 numerical_cols = X.select_dtypes(include=['int64', 'float64']).columns.tolist()
 
-# === OneHotEncoder ===
+#  OneHotEncoder 
 encoder = ColumnTransformer(
     transformers=[
         ('cat', OneHotEncoder(drop='first', sparse_output=False), categorical_cols)
@@ -105,15 +105,15 @@ X_test = encoder.transform(X_test)
 
 print(f"Features: {X_train.shape[1]}")
 
-# === Linear Regression Model ===
+# Linear Regression Model 
 model = LinearRegression()
 model.fit(X_train, y_train)
 
-# === Προβλέψεις ===
+#  Προβλέψεις 
 y_pred_train = model.predict(X_train)
 y_pred_test = model.predict(X_test)
 
-# === Αξιολόγηση ===
+#  Αξιολόγηση 
 train_mae = mean_absolute_error(y_train, y_pred_train)
 train_r2 = r2_score(y_train, y_pred_train)
 test_mae = mean_absolute_error(y_test, y_pred_test)
@@ -129,7 +129,7 @@ print(f"Test R²:   {test_r2:.4f}")
 print(f"Gap R²:    {train_r2 - test_r2:.4f}")
 print("="*50)
 
-# === Πίνακας πραγματικών vs προβλεπόμενων τιμών (Test set) ===
+#  Πίνακας πραγματικών vs προβλεπόμενων τιμών (Test set)
 df_compare = pd.DataFrame({
     'Actual': y_test.values,
     'Predicted': y_pred_test
