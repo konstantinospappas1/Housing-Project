@@ -14,6 +14,8 @@ print(f"Δεδομένα: {len(df)} γραμμές")
 # Αφαίρεση missing values
 df = df.dropna()
 
+print (df.nunique())
+
 # Διαχωρισμός X και y
 X = df.drop('price', axis=1)
 y = df['price']
@@ -43,12 +45,12 @@ print(f"Features: {X_train.shape[1]}")
 
 # XGBoost μοντέλο
 model = XGBRegressor(
-    n_estimators=135,
-    max_depth=3,
-    learning_rate=0.1,
-    subsample=0.8,
-    colsample_bytree=0.8,
-    min_child_weight=3,
+    n_estimators=15, #5-20
+    max_depth=3, #2-7
+    learning_rate=0.3,  #0.01-0.5
+    subsample=0.6, #0.5-0.9
+    colsample_bytree=0.8, #0.5-0.9
+    min_child_weight=5, 
     random_state=42
 )
 
