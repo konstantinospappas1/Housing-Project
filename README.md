@@ -19,7 +19,7 @@ The main goal is to **understand the factors influencing house prices** and to *
 | Tool | Purpose |
 |------|----------|
 | 🐍 **Python (pandas, numpy, sklearn, xgboost, matplotlib)** | Data cleaning, preprocessing, feature encoding, model training and evaluation |
-| 🧩 **SQL (MySQL)** | Data extraction, filtering, and aggregation |
+| 🧩 **SQL (MySQL)** | Data extraction and filtering |
 | 📊 **Power BI** | Interactive dashboards and visual data exploration |
 
 ---
@@ -53,5 +53,5 @@ The final model achieved **strong predictive performance**, with a **high test R
 
 ## ✍️ Author
 **Konstantinos Pappas**  
-School of Applied Mathematics and Physical Sciences (SEMFE)  
+School of Applied Mathematics and Physical Sciences (SAMPS)  
 Python / Data Analysis / Machine Learning Enthusiast 🧠
