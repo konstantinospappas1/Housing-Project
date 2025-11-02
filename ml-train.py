@@ -66,8 +66,8 @@ train_r2 = r2_score(y_train, y_pred_train)
 test_mae = mean_absolute_error(y_test, y_pred_test)
 test_r2 = r2_score(y_test, y_pred_test)
 
-print("\n" + "="*50)
-print("ΑΠΟΤΕΛΕΣΜΑΤΑ")
+
+print("Αποτελεσματα")
 print("="*50)
 print(f"Train MAE: {train_mae:,.2f}")
 print(f"Train R²:  {train_r2:.4f}")
@@ -83,5 +83,6 @@ df_compare = pd.DataFrame({
     'Actual': y_test.values,
     'Predicted': y_pred_test
 })
+
 
 print(df_compare.head(10))  
