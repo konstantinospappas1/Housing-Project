@@ -58,11 +58,10 @@ random_search = RandomizedSearchCV(
 
 print("\nΞεκινά το Randomized Search...")
 random_search.fit(X_train, y_train)
-print("\n✅ Τέλος αναζήτησης")
+print("\n Τέλος αναζήτησης")
 
 #  6. Αποτελέσματα 
-print("\n" + "="*60)
-print("📊 ΚΑΛΥΤΕΡΕΣ ΠΑΡΑΜΕΤΡΟΙ ΑΠΟ RANDOMIZED SEARCH")
+print(" Καλυτερες Παραμετροι του randomized search ")
 print("="*60)
 print(random_search.best_params_)
 print(f"Μέσο R² από CV: {random_search.best_score_:.4f}")
@@ -80,8 +79,8 @@ test_r2 = r2_score(y_test, y_pred_test)
 train_mae = mean_absolute_error(y_train, y_pred_train)
 test_mae = mean_absolute_error(y_test, y_pred_test)
 
-print("\n" + "="*60)
-print("📈 ΤΕΛΙΚΑ ΑΠΟΤΕΛΕΣΜΑΤΑ")
+
+print(" Αποτελέσματα")
 print("="*60)
 print(f"Train MAE: {train_mae:,.2f}")
 print(f"Test MAE:  {test_mae:,.2f}")
